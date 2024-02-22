@@ -1,0 +1,27 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Step 1: Read the historical stock price data
+alphabet_stock_data = pd.read_csv("alphabet_stock_data.csv")  # Replace "alphabet_stock_data.csv" with the actual file path
+
+# Step 2: Convert the date column to datetime format
+alphabet_stock_data['Date'] = pd.to_datetime(alphabet_stock_data['Date'])
+
+# Step 3: Set the date column as the index
+alphabet_stock_data.set_index('Date', inplace=True)
+
+# Step 4: Select the trading volume and stock prices between two specific dates
+start_date = '2023-01-01'
+end_date = '2023-12-31'
+selected_data = alphabet_stock_data.loc[start_date:end_date]
+
+# Step 5: Plot the selected trading volume and stock prices as a scatter plot
+plt.figure(figsize=(10, 6))
+plt.scatter(selected_data.index, selected_data['Volume'], color='blue', label='Volume')
+plt.scatter(selected_data.index, selected_data['Close'], color='red', label='Close Price')
+plt.title('Trading Volume and Stock Prices of Alphabet Inc. (2023)')
+plt.xlabel('Date')
+plt.ylabel('Value')
+plt.legend()
+plt.grid(True)
+plt.show()
