@@ -1,0 +1,10 @@
+import pandas as pd
+
+# Assuming the data is stored in a DataFrame named 'jobs'
+jobs = pd.read_csv("jobs.csv")  # Replace "jobs.csv" with the actual file path
+
+# Sort the DataFrame in descending order based on 'JOB_TITLE' column
+sorted_jobs = jobs.sort_values(by='JOB_TITLE', ascending=False)
+
+# Display the sorted DataFrame
+print(sorted_jobs)
