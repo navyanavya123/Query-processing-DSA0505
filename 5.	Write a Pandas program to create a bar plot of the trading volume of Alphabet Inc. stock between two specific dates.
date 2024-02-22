@@ -1,0 +1,24 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Step 1: Read the historical stock price data
+stock_prices = pd.read_csv("alphabet_stock_prices.csv")  # Replace "alphabet_stock_prices.csv" with the actual file path
+
+# Step 2: Convert the date column to datetime format
+stock_prices['Date'] = pd.to_datetime(stock_prices['Date'])
+
+# Step 3: Set the date column as the index
+stock_prices.set_index('Date', inplace=True)
+
+# Step 4: Select the trading volume between two specific dates
+start_date = '2023-01-01'
+end_date = '2023-12-31'
+selected_volume = stock_prices.loc[start_date:end_date, 'Volume']
+
+# Step 5: Plot the selected trading volume as a bar plot
+selected_volume.plot(kind='bar', figsize=(10, 6), color='skyblue')
+plt.title('Trading Volume of Alphabet Inc. (2023)')
+plt.xlabel('Date')
+plt.ylabel('Trading Volume')
+plt.grid(True)
+plt.show()
