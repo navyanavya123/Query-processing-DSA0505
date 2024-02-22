@@ -1,0 +1,14 @@
+import pandas as pd
+
+# Assuming the data is stored in a DataFrame named 'employees'
+employees = pd.read_csv("employees.csv")  # Replace "employees.csv" with the actual file path
+
+# Group by employee ID and count the number of unique jobs for each employee
+jobs_count = employees.groupby('EMPLOYEE_ID')['JOB_ID'].nunique()
+
+# Filter employees who have worked in two or more jobs
+employees_with_multiple_jobs = jobs_count[jobs_count >= 2]
+
+# Display the employee IDs who did two or more jobs
+print("Employee IDs who did two or more jobs in the past:")
+print(employees_with_multiple_jobs.index.tolist())
