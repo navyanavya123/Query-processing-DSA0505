@@ -1,0 +1,11 @@
+import pandas as pd
+
+# Load the dataset
+df = pd.read_csv('your_dataset.csv')
+
+# Identify null values
+null_values = df.isnull()
+
+# Display null values
+print("Null values in the dataset:")
+print(null_values)
