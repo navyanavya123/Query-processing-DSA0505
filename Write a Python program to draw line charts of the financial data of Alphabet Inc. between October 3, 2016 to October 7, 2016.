@@ -1,0 +1,29 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Read the financial data from the CSV file
+df = pd.read_csv('fdata.csv')
+
+# Convert the 'Date' column to datetime format
+df['Date'] = pd.to_datetime(df['Date'], format='%m-%d-%y')
+
+# Filter the data for the specified date range
+start_date = '2016-10-03'
+end_date = '2016-10-07'
+filtered_df = df[(df['Date'] >= start_date) & (df['Date'] <= end_date)]
+
+# Plot the line chart
+plt.plot(filtered_df['Date'], filtered_df['Close'], marker='o')
+
+# Add labels and title
+plt.xlabel('Date')
+plt.ylabel('Close Price')
+plt.title('Financial Data of Alphabet Inc. (Oct 3, 2016 - Oct 7, 2016)')
+
+# Rotate x-axis labels for better readability
+plt.xticks(rotation=45)
+
+# Show the plot
+plt.grid(True)
+plt.tight_layout()
+plt.show()
