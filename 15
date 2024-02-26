@@ -1,0 +1,18 @@
+import pandas as pd
+
+# Create a sample DataFrame
+data = {'A': [1, 2, None, 4],
+        'B': [None, 5, 6, 7],
+        'C': [None, None, 10, None]}
+df = pd.DataFrame(data)
+
+# Display the original DataFrame
+print("Original DataFrame:")
+print(df)
+
+# Keep the rows with at least 2 NaN values
+df_filtered = df.dropna(thresh=len(df.columns) - 1)
+
+# Display the filtered DataFrame
+print("\nDataFrame with rows having at least 2 NaN values:")
+print(df_filtered)
