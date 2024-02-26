@@ -1,0 +1,8 @@
+import pandas as pd
+
+# Create a sample DataFrame
+data = {'Column': ['apple', 'banana', 'orange', 'grape', 'pineapple']}
+df = pd.DataFrame(data)
+subdf="app"
+index_df=df[df['Column'].str.find(subdf)!=-1].index
+print(index_df)
