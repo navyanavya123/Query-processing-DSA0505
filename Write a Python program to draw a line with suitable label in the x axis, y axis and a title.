@@ -1,0 +1,7 @@
+import pandas as pd
+data={'name':['navya','bhavya','kavya','sravya']}
+print("original dataset")
+df=pd.DataFrame(data)
+print(df)
+dd=df['name'].str.swapcase()
+print(dd)
