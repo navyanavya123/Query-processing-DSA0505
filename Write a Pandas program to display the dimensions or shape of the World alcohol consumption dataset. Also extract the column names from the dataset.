@@ -1,0 +1,14 @@
+import pandas as pd
+
+# Create a sample DataFrame
+data = {'Name': ['John', 'Alice', 'Bob', 'Emma', 'Charlie', 'David', 'Eva'],
+        'School_Code': ['S001', 'S002', 'S001', 'S003', 'S002', 'S003', 'S001'],
+        'Class': ['A', 'B', 'A', 'B', 'A', 'B', 'A'],
+        'Age': [15, 14, 16, 15, 14, 15, 16]}
+df = pd.DataFrame(data)
+
+# Group the DataFrame based on 'School_Code' and select the 'Class' column
+grouped = df.groupby('School_Code')['Class']
+
+# Print the grouped variable
+print(grouped)
