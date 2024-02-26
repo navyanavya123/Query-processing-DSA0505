@@ -1,0 +1,37 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Sample data for three groups: Group A, Group B, and Group C
+# Each group has weights and heights for 10 individuals
+np.random.seed(0)  # for reproducibility
+group_size = 10
+
+# Generate data for Group A
+weights_A = np.random.normal(60, 10, group_size)
+heights_A = np.random.normal(160, 10, group_size)
+
+# Generate data for Group B
+weights_B = np.random.normal(70, 12, group_size)
+heights_B = np.random.normal(170, 8, group_size)
+
+# Generate data for Group C
+weights_C = np.random.normal(80, 15, group_size)
+heights_C = np.random.normal(180, 10, group_size)
+
+# Create scatter plot for each group
+plt.scatter(weights_A, heights_A, label='Group A', color='blue')
+plt.scatter(weights_B, heights_B, label='Group B', color='green')
+plt.scatter(weights_C, heights_C, label='Group C', color='red')
+
+# Add labels and title
+plt.xlabel('Weight (kg)')
+plt.ylabel('Height (cm)')
+plt.title('Scatter Plot of Weight vs Height for Three Different Groups')
+
+# Add legend
+plt.legend()
+
+# Show plot
+plt.grid(True)  # Show grid for better readability
+plt.tight_layout()
+plt.show()
