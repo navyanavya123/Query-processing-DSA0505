@@ -1,0 +1,13 @@
+import pandas as pd
+
+# Load the World alcohol consumption dataset
+# Assuming the dataset is named 'world_alcohol.csv' and is located in the current directory
+df = pd.read_csv('world_alcohol.csv')
+
+# Display the dimensions or shape of the dataset
+print("Dimensions of the dataset (rows, columns):", df.shape)
+
+# Extract and display the column names from the dataset without converting to a list
+print("\nColumn names:")
+for column in df.columns:
+    print(column)
