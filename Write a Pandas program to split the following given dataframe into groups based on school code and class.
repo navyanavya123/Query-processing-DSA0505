@@ -1,0 +1,16 @@
+import pandas as pd
+
+# Create a sample DataFrame
+data = {'Name': ['John', 'Alice', 'Bob', 'Emma', 'Charlie'],
+        'Age': [15, 14, 16, 15, 14]}
+df = pd.DataFrame(data)
+
+# Calculate mean, min, and max of the 'Age' column
+age_mean = df['Age'].mean()
+age_min = df['Age'].min()
+age_max = df['Age'].max()
+
+# Display the results
+print("Mean Age:", age_mean)
+print("Minimum Age:", age_min)
+print("Maximum Age:", age_max)
