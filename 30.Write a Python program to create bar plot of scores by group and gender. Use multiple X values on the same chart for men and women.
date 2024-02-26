@@ -1,0 +1,29 @@
+import matplotlib.pyplot as plt
+
+# Sample data
+groups = ['Group A', 'Group B', 'Group C', 'Group D']
+scores_men = [20, 35, 30, 35]
+scores_women = [25, 32, 34, 20]
+
+# Set the width of the bars
+bar_width = 0.35
+
+# Set the x locations for the groups
+index = range(len(groups))
+
+# Create bar plot for men
+plt.bar(index, scores_men, bar_width, label='Men')
+
+# Create bar plot for women, shift x positions to the right by the width of the bars
+plt.bar([i + bar_width for i in index], scores_women, bar_width, label='Women')
+
+# Add labels, title, and legend
+plt.xlabel('Groups')
+plt.ylabel('Scores')
+plt.title('Scores by Group and Gender')
+plt.xticks([i + bar_width / 2 for i in index], groups)
+plt.legend()
+
+# Show plot
+plt.tight_layout()
+plt.show()
