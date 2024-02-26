@@ -1,0 +1,18 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Generate random data for X and Y
+np.random.seed(0)  # for reproducibility
+x = np.random.rand(100)
+y = np.random.rand(100)
+
+# Create scatter plot
+plt.scatter(x, y, color='blue', alpha=0.5)  # alpha controls the transparency
+
+# Add labels and title
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.title('Scatter Plot of Random Distribution')
+
+# Show plot
+plt.show()
