@@ -1,0 +1,18 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Generate random data for X and Y
+np.random.seed(0)  # for reproducibility
+x = np.random.rand(100)
+y = np.random.rand(100)
+
+# Create scatter plot with empty circles
+plt.scatter(x, y, marker='o', edgecolor='blue', facecolor='none')
+
+# Add labels and title
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.title('Scatter Plot with Empty Circles')
+
+# Show plot
+plt.show()
